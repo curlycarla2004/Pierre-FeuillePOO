@@ -5,3 +5,8 @@ L'important n'est pas de comprendre parfaitement ces mécanismes PHP mais simple
 Nous utiliserons également une classe **abstraite** qui est une classe qui ne peut être instanciée.
 
 ![Alt text](img/screenshot.png?raw=true "Screenshot")
+
+## Améliorations
+1. Rendre les duels aléatoires.
+2. Ajouter un attribut privé **vie** à la  classe **Objet** (entier de 0 à 100) qui permettra de rendre quasiment impossible un match nul.
+3. Ajouter un nouvel objet **de votre choix** qui n'a aucun ennemi.
