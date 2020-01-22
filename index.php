@@ -27,18 +27,24 @@ $duel_01 = new Duel($objet_01, $objet_02);
       <!-- Le Duel -->
       <div class="d-flex justify-content-center align-items-center">
         <div class="card shadow">
-          <img src="<?php echo 'img/objets/'.strtolower($objet_01->nom()).'.jpg';?>" class="card-img-top">
+          <img src="<?php echo 'img/objets/' . strtolower($objet_01->nom()) . '.jpg'; ?>" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title"><?php echo $objet_01->nom(); ?></h5>
             <p class="card-text text-muted"><?php echo $objet_01->description(); ?></p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <?php echo $objet_01->vie(); ?>%;"><?php echo $objet_01->vie(); ?>%</div>
+            </div>
           </div>
         </div>
         <h2 class="px-5">VS</h2>
         <div class="card shadow">
-          <img src="<?php echo 'img/objets/'.strtolower($objet_02->nom()).'.jpg';?>" class="card-img-top">
+          <img src="<?php echo 'img/objets/' . strtolower($objet_02->nom()) . '.jpg'; ?>" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title"><?php echo $objet_02->nom(); ?></h5>
             <p class="card-text text-muted"><?php echo $objet_02->description(); ?></p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <?php echo $objet_02->vie(); ?>%;"><?php echo $objet_02->vie(); ?>%</div>
+            </div>
           </div>
         </div>
       </div>
@@ -48,14 +54,14 @@ $duel_01 = new Duel($objet_01, $objet_02);
       <!-- Le gagnant -->
       <div class="row pt-5 mt-5 justify-content-center">
 
-        <?php if ($gagnant instanceof ObjetInterface): ?>
+        <?php if ($gagnant instanceof ObjetInterface) : ?>
           <div class="alert alert-success col-5 text-center shadow" role="alert">
-            Le gagnant est <strong><?php echo $gagnant->nom(); ?></strong> !
+            Le gagnant est <strong><?php echo $gagnant->nom(); ?></strong> (<?php echo $gagnant->vie(); ?>%) !
           </div>
-          <?php else: ?>
-            <div class="alert alert-warning col-5 text-center shadow" role="alert">
-              C'est un match nul...
-            </div>
+        <?php else : ?>
+          <div class="alert alert-warning col-5 text-center shadow" role="alert">
+            C'est un match nul...
+          </div>
         <?php endif; ?>
       </div>
 
