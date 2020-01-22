@@ -37,16 +37,24 @@ class Duel
   /**
    * On dédtermine le gagnant en fonction des propriétés de chacun des deux objets.
    */
-  public function getGagnant(){
-
-    if($this->_objet_01->detruit($this->_objet_02)){
+  public function getGagnant()
+  {
+    if ($this->_objet_01->detruit($this->_objet_02)) {
       return $this->_objet_01;
-    }
-    elseif($this->_objet_02->detruit($this->_objet_01)){
+    } elseif ($this->_objet_02->detruit($this->_objet_01)) {
       return $this->_objet_02;
-    }
-    else{
-      return NULL;
+    } else {
+      switch (TRUE) {
+        case $this->_objet_01->vie() > $this->_objet_02->vie():
+          return $this->_objet_01;
+          break;
+        case $this->_objet_01->vie() < $this->_objet_02->vie():
+          return $this->_objet_02;
+          break;
+          //S'il n'est ni superieur stric ni inferieur stric, alors il est égal.
+        default:
+          break;
+      }
     }
   }
 
@@ -56,7 +64,8 @@ class Duel
    *
    * @return ObjetInterface[]
    */
-  public static function obtenirDeuxObjets():array{
+  public static function obtenirDeuxObjets(): array
+  {
 
     //Tous les types d'objets utilisables sont listés dans OBJETS_DISPONIBLES.
     //On récupère simplement un nom d'objet depuis ce tableau de manière aléatoire.
