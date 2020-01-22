@@ -18,28 +18,48 @@ abstract class Objet implements ObjetInterface
   protected $nom = 'Objet';
   protected $description = 'Description de l\'objet.';
   protected $victime = 'Objet';
+  protected $vie;
 
+  public function __construct($vie = '')
+  {
+    if (empty($vie)) {
+      $this->vie = rand(1, 100);
+    } else {
+      $this->vie = intval($vie);
+    }
+  }
   /**
    * @inheritdoc
    */
-  public function detruit(ObjetInterface $objet):bool{
+  public function detruit(ObjetInterface $objet): bool
+  {
     if ($objet instanceof $this->victime)
-    return TRUE;
+      return TRUE;
     else
-    return FALSE;
+      return FALSE;
   }
 
   /**
    * @inheritdoc
    */
-  public function nom(): string{
+  public function nom(): string
+  {
     return $this->nom;
   }
 
   /**
    * @inheritdoc
    */
-  public function description(): string{
+  public function description(): string
+  {
     return $this->description;
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function vie(): int
+  {
+    return $this->vie;
   }
 }
