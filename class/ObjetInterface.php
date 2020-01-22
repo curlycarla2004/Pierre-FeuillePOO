@@ -12,6 +12,13 @@ interface ObjetInterface{
   public function nom(): string;
 
   /**
+   * Retourne le vie d'un objet.
+   *
+   * @return string
+   */
+  public function vie(): int;
+
+  /**
    * Retourne la description d'un objet.
    *
    * @return string

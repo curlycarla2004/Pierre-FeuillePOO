@@ -14,7 +14,9 @@ class Duel
   const OBJETS_DISPONIBLES = [
     'Wf3\Objets\Pierre',
     'Wf3\Objets\Feuille',
-    'Wf3\Objets\Ciseaux'
+    'Wf3\Objets\Ciseaux',
+    'Wf3\Objets\Nokia3310',
+    'Wf3\Objets\ChuckNorris',
   ];
 
   private $_objet_01;

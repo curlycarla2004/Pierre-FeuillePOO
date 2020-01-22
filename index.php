@@ -27,7 +27,7 @@ $duel_01 = new Duel($objet_01, $objet_02);
       <!-- Le Duel -->
       <div class="d-flex justify-content-center align-items-center">
         <div class="card shadow">
-          <img src="<?php echo 'img/objets/' . strtolower($objet_01->nom()) . '.jpg'; ?>" class="card-img-top">
+          <img src="<?php echo 'img/objets/' . strtolower($objet_01->nom()) . '.jpg'; ?>" class="img-fluid miniature">
           <div class="card-body">
             <h5 class="card-title"><?php echo $objet_01->nom(); ?></h5>
             <p class="card-text text-muted"><?php echo $objet_01->description(); ?></p>
@@ -38,7 +38,7 @@ $duel_01 = new Duel($objet_01, $objet_02);
         </div>
         <h2 class="px-5">VS</h2>
         <div class="card shadow">
-          <img src="<?php echo 'img/objets/' . strtolower($objet_02->nom()) . '.jpg'; ?>" class="card-img-top">
+          <img src="<?php echo 'img/objets/' . strtolower($objet_02->nom()) . '.jpg'; ?>" class="img-fluid miniature">
           <div class="card-body">
             <h5 class="card-title"><?php echo $objet_02->nom(); ?></h5>
             <p class="card-text text-muted"><?php echo $objet_02->description(); ?></p>
