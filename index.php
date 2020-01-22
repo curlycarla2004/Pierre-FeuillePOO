@@ -4,13 +4,16 @@ require 'vendor/autoload.php';
 
 use Wf3\Duel;
 use Wf3\ObjetInterface;
-use Wf3\Objets\Ciseaux;
-use Wf3\Objets\Feuille;
-use Wf3\Objets\Pierre;
 
-$objet_01 = new Pierre();
-$objet_02 = new Ciseaux();
+//On récupère de manière aéatoire 2 objets.
+$objets = Duel::obtenirDeuxObjets();
+
+$objet_01 = $objets[0];
+$objet_02 = $objets[1];
+
+//On cré le duel.
 $duel_01 = new Duel($objet_01, $objet_02);
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

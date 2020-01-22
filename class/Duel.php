@@ -11,6 +11,12 @@ use Wf3\ObjetInterface;
 class Duel
 {
 
+  const OBJETS_DISPONIBLES = [
+    'Wf3\Objets\Pierre',
+    'Wf3\Objets\Feuille',
+    'Wf3\Objets\Ciseaux'
+  ];
+
   private $_objet_01;
   private $_objet_02;
 
@@ -42,5 +48,28 @@ class Duel
     else{
       return NULL;
     }
+  }
+
+  /**
+   * Instancie 2 objets de façon aléatoire et les retourne sous
+   * forme de tableau.
+   *
+   * @return ObjetInterface[]
+   */
+  public static function obtenirDeuxObjets():array{
+
+    //Tous les types d'objets utilisables sont listés dans OBJETS_DISPONIBLES.
+    //On récupère simplement un nom d'objet depuis ce tableau de manière aléatoire.
+    $obj_01_class_name = self::OBJETS_DISPONIBLES[array_rand(self::OBJETS_DISPONIBLES)];
+    $obj_02_class_name = self::OBJETS_DISPONIBLES[array_rand(self::OBJETS_DISPONIBLES)];
+
+    //On créé un tableau contenant 2 objets.
+    $objets = [
+      new $obj_01_class_name(),
+      new $obj_02_class_name(),
+    ];
+
+    //On retourne le qui contient les 2 objets.
+    return $objets;
   }
 }
